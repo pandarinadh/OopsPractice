@@ -43,13 +43,9 @@ namespace OopsPractice
             objA.SetToNull(ref objA);
             Console.WriteLine(objA == null);
 
-            SingleTon.GetSingleTon();
+            Console.WriteLine("singleton first {0}", SingleTon.SingleTonObject.GetHashCode());
 
-            Console.WriteLine("singleton first {0}", SingleTon.GetSingleTon().GetHashCode());
-
-            SingleTon.GetSingleTon();
-
-            Console.WriteLine("singleton second {0}", SingleTon.GetSingleTon().GetHashCode());
+            Console.WriteLine("singleton second {0}", SingleTon.SingleTonObject.GetHashCode());
 
             Car objCar = new Car();
             objCar.SetTires();
@@ -186,15 +182,18 @@ namespace OopsPractice
     {
         public static SingleTon singleTon = null;
 
-        public static SingleTon GetSingleTon()
+        public static SingleTon SingleTonObject
         {
-            if (singleTon == null)
+            get
             {
+                if (singleTon == null)
+                {
 
-                singleTon = new SingleTon();
+                    singleTon = new SingleTon();
+                }
+
+                return singleTon;
             }
-
-            return singleTon;
         }
     }
 
