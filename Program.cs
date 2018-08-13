@@ -55,6 +55,9 @@ namespace OopsPractice
             objTruck.SetTires();
             Console.WriteLine("Truck tires : {0}", objTruck.NumberofTires);
 
+            MyExetentionMethodClass myExetentionMethodClass = new MyExetentionMethodClass();
+            myExetentionMethodClass.NewMethod();
+
             Console.ReadLine();
         }
     }
@@ -236,4 +239,19 @@ namespace OopsPractice
         }
     }
 
+    public static class MyExetentionMethodClass1
+    {
+        public static void NewMethod(this MyExetentionMethodClass obj)
+        {
+            Console.WriteLine("Extention method");
+        }
+    }
+
+    public class MyExetentionMethodClass
+    {
+        public void Method1()
+        {
+            
+        }
+    }
 }
