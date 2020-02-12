@@ -57,8 +57,24 @@ namespace OopsPractice
 
             MyExetentionMethodClass myExetentionMethodClass = new MyExetentionMethodClass();
             myExetentionMethodClass.NewMethod();
-
+            CodingProblemJan2020();
             Console.ReadLine();
+        }
+
+        public static void CodingProblemJan2020()
+        {
+            List<int> list = new List<int> { 10, 15, 3, 7 };
+            int k = 17;
+            list.ForEach(n =>
+            {
+                int m = k - n > 0 ? k - n : -(k - n);
+
+                if (list.Contains(m))
+                {
+                    Console.WriteLine("yes");
+                }
+            });
+
         }
     }
 
